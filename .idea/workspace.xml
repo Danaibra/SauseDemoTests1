@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10f12b10-8d87-44ff-8b99-66870d2fbb7a" name="Changes" comment="task">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Pages/BasePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/DriverFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/TestDataReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/testdata.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/CartPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/CheckoutCompletePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/CheckoutCompletePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/CheckoutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/CheckoutPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/CheckoutStepTwoPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/CheckoutStepTwoPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/InventoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/InventoryPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/SauceDemoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/SauceDemoTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="10f12b10-8d87-44ff-8b99-66870d2fbb7a" name="Changes" comment="corrections after review" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,32 +56,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "TestNG.C:/Users/ibrae/Desktop/Epam/SauseDemoTests1/testng-regression.xml.executor": "Run",
-    "TestNG.C:/Users/ibrae/Desktop/Epam/SauseDemoTests1/testng-smoke.xml.executor": "Run",
-    "TestNG.C:/Users/ibrae/Desktop/Epam/SauseDemoTests1/testng.xml.executor": "Run",
-    "TestNG.SauceDemoTest.executor": "Run",
-    "TestNG.SauceDemoTest.testAddToCart.executor": "Run",
-    "TestNG.SauceDemoTest.testFullPurchase (1).executor": "Debug",
-    "TestNG.SauceDemoTest.testFullPurchase.executor": "Run",
-    "TestNG.SauceDemoTest.testLogin.executor": "Run",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "#1 on feature",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "C:/Users/ibrae/Desktop/Epam/SauseDemoTests1/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;TestNG.C:/Users/ibrae/Desktop/Epam/SauseDemoTests1/testng-regression.xml.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.C:/Users/ibrae/Desktop/Epam/SauseDemoTests1/testng-smoke.xml.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.C:/Users/ibrae/Desktop/Epam/SauseDemoTests1/testng.xml.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.SauceDemoTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.SauceDemoTest.testAddToCart.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.SauceDemoTest.testFullPurchase (1).executor&quot;: &quot;Debug&quot;,
+    &quot;TestNG.SauceDemoTest.testFullPurchase.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.SauceDemoTest.testLogin.executor&quot;: &quot;Run&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#1 on feature&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/ibrae/Desktop/Epam/SauseDemoTests1/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ibrae\Desktop\Epam\SauseDemoTests1\src\test\java" />
@@ -233,7 +217,21 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1785772219242</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="corrections after review">
+      <option name="closed" value="true" />
+      <created>1786431508090</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1786431508090</updated>
+    </task>
+    <task id="LOCAL−00004" summary="corrections after review">
+      <option name="closed" value="true" />
+      <created>1786431518756</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1786431518756</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -250,6 +248,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="task" />
-    <option name="LAST_COMMIT_MESSAGE" value="task" />
+    <MESSAGE value="corrections after review" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrections after review" />
   </component>
 </project>
