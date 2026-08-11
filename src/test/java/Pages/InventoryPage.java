@@ -1,33 +1,41 @@
 package Pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-public class InventoryPage {
-    private WebDriver driver;
+import java.util.List;
 
-    private By pageTitle = By.className("title");
-    private By addToCartBackpack = By.xpath("//*[@id='add-to-cart-sauce-labs-backpack']");
-    private By cartBadge = By.className("shopping_cart_badge");
-    private By cartButton = By.className("shopping_cart_link");
+public class InventoryPage extends BasePage {
+    @FindBy(className = "title")
+    private WebElement pageTitle;
+    @FindBy(id = "add-to-cart-sauce-labs-backpack")
+    private WebElement addToCartBackpack;
+    @FindBy(className = "inventory_item")
+    private List<WebElement> inventoryItems;
+
 
     public InventoryPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public String getTitleText() {
-        return driver.findElement(pageTitle).getText();
+        return pageTitle.getText();
     }
 
-    public void setAddToCartBackpack() {
-        driver.findElement(addToCartBackpack).click();
+    public int getProductsCount() {
+        return inventoryItems.size();
+    }
+
+    public void addBackpackToCart() {
+        addToCartBackpack.click();
     }
 
     public String getCartBadgeText() {
-        return driver.findElement(cartBadge).getText();
+        return cartBadge.getText();
     }
 
     public void goToCart() {
-        driver.findElement(cartButton).click();
+        cartButton.click();
     }
 }

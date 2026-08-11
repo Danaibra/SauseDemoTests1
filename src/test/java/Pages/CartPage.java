@@ -1,32 +1,33 @@
 package Pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class CartPage {
-    private WebDriver driver;
+    private final WebDriver driver;
 
-    private By cartItem = By.className("inventory_item_name");
-    private By continueShoppingButton = By.id("continue-shopping");
-    private By checkoutButton = By.id("checkout");
+    @FindBy(className = "inventory_item_name")
+    private WebElement cartItem;
+
+    @FindBy(id = "checkout")
+    private WebElement checkoutButton;
 
     public CartPage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     public String getItemName() {
-        return driver.findElement(cartItem).getText();
-    }
-
-    public void clickContinueShopping() {
-        driver.findElement(continueShoppingButton).click();
+        return cartItem.getText();
     }
 
     public boolean isCheckoutButtonEnabled() {
-        return driver.findElement(checkoutButton).isEnabled();
+        return checkoutButton.isEnabled();
     }
 
     public void goToCheckOut() {
-        driver.findElement(checkoutButton).click();
+        checkoutButton.click();
     }
 }
