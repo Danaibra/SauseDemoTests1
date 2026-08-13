@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -35,9 +35,9 @@ public class LoginPage extends BasePage {
     }
 
     public void login(User user) {
-        logger.info("Logging in user: {}", user.getUsername());
-        enterUsername(user.getUsername());
-        enterPassword(user.getPassword());
+        logger.info("Logging in user: {}", user.username());
+        enterUsername(user.username());
+        enterPassword(user.password());
         clickLogin();
     }
 }

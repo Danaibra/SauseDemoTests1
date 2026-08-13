@@ -22,7 +22,7 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
-        WebDriver driver = ((Tests.BaseTest) result.getInstance()).getDriver();
+        WebDriver driver = ((tests.BaseTest) result.getInstance()).getDriver();
 
         if (driver != null) {
             String screenshotDir = getScreenshotDir();
@@ -49,11 +49,11 @@ public class TestListener implements ITestListener {
 
     private String getScreenshotDir() {
         Properties properties = new Properties();
-        try (FileInputStream file = new FileInputStream("src/test/resources/config.properties")) {
-            properties.load(file);
+        try (var stream = TestListener.class.getClassLoader().getResourceAsStream ("framework.properties")) {
+            properties.load(stream);
             return properties.getProperty("screenshots.folder", "target/screenshots");
         } catch (IOException e) {
-            logger.warn("Could not read config.properties, using default path target/screenshots");
+            logger.warn("Could not read framework.properties, using default path target/screenshots");
             return "target/screenshots";
         }
     }

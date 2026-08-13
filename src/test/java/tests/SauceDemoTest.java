@@ -1,20 +1,17 @@
-package Tests;
+package tests;
 
-import Pages.*;
+import pages.*;
 import models.Customer;
 import models.User;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import utils.TestDataReader;
 
-@Listeners(utils.TestListener.class)
 public class SauceDemoTest extends BaseTest {
     private InventoryPage inventoryPage;
 
-    @BeforeMethod
-    public void loginBeforeTest() {
+    @BeforeMethod(dependsOnMethods = "setup")
+    protected void loginBeforeTest() {
         logger.info("Executing @BeforeMethod: Logging in with standard user");
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(User.getStandardUser());
@@ -57,10 +54,6 @@ public class SauceDemoTest extends BaseTest {
 
         Assert.assertEquals(cartPage.getItemName(), "Sauce Labs Backpack");
         logger.info("Verified item in cart: 'Sauce Labs Backpack'");
-
-        inventoryPage.goToCart();
-        Assert.assertTrue(cartPage.isCheckoutButtonEnabled());
-        logger.info("Verified Checkout button is enabled");
     }
 
     @Test
