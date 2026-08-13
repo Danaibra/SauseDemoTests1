@@ -5,7 +5,7 @@
     </listeners>
     <test name="SmokeTests">
         <classes>
-            <class name="Tests.SauceDemoTest">
+            <class name="tests.SauceDemoTest">
                 <methods>
                     <include name="testFullPurchase"/>
                 </methods>

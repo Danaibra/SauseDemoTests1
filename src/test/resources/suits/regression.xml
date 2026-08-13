@@ -5,7 +5,7 @@
     </listeners>
     <test name="RegressionTests">
         <packages>
-            <package name="Tests"/>
+            <package name="tests"/>
         </packages>
     </test>
 </suite>
