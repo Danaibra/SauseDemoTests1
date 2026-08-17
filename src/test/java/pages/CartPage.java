@@ -3,8 +3,9 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utils.LoggedElement;
 
-public class CartPage extends BasePage{
+public class CartPage extends AuthorizedPage{
 
     @FindBy(className = "inventory_item_name")
     private WebElement cartItem;
@@ -16,22 +17,19 @@ public class CartPage extends BasePage{
         super(driver);
     }
 
+    public boolean isPageLoaded() {
+        return getCurrentUrl().contains("cart.html");
+    }
+
     public String getItemName() {
-        logger.debug("Retrieving cart item name"); // Technical/debug log
-        String itemName = cartItem.getText();
-        logger.info("Cart item name is: {}", itemName); // Action/result log
-        return itemName;
+        return new LoggedElement(cartItem).getText("Cart Item Name");
     }
 
     public boolean isCheckoutButtonEnabled() {
-        logger.debug("Checking if checkout button is enabled");
-        boolean isEnabledCheckoutButton = checkoutButton.isEnabled();
-        logger.info("Checkout button is enabled status: {}", isEnabledCheckoutButton);
-        return isEnabledCheckoutButton;
+        return new LoggedElement(checkoutButton).isEnabled("CheckoutButton");
     }
 
     public void goToCheckOut() {
-        logger.info("Clicking checkout button"); // Action log
-        checkoutButton.click();
+        new LoggedElement(checkoutButton).click("Checkout Button");
     }
 }

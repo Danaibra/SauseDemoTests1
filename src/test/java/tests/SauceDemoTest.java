@@ -20,12 +20,12 @@ public class SauceDemoTest extends BaseTest {
 
     @Test
     public void testLogin() {
-        logger.info("Starting testLogin execution");
         Assert.assertTrue(
-                driver.getCurrentUrl().contains("inventory.html"),
-                "Inventory page URL is incorrect."
+                inventoryPage.isPageLoaded(),
+                "Inventory page is not loaded correctly."
         );
         logger.info("URL assertion passed: Inventory page loaded correctly");
+
         Assert.assertEquals(
                 inventoryPage.getTitleText(),
                 "Products",
@@ -49,7 +49,7 @@ public class SauceDemoTest extends BaseTest {
 
         inventoryPage.goToCart();
         CartPage cartPage = new CartPage(driver);
-        Assert.assertTrue(driver.getCurrentUrl().contains("cart.html"));
+        Assert.assertTrue(cartPage.isPageLoaded(), "Cart page is not loaded correctly.");
         logger.info("Navigated to Cart page successfully");
 
         Assert.assertEquals(cartPage.getItemName(), "Sauce Labs Backpack");
@@ -74,8 +74,8 @@ public class SauceDemoTest extends BaseTest {
         CheckoutCompletePage completePage = new CheckoutCompletePage(driver);
 
         Assert.assertTrue(
-                driver.getCurrentUrl().contains("checkout-complete.html"),
-                "Order completion page URL is incorrect."
+                completePage.isPageLoaded(),
+                "Order completion page is not loaded correctly."
         );
         logger.info("URL assertion passed: Checkout complete page loaded");
 

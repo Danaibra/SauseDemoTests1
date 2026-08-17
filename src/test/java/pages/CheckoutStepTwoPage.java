@@ -5,9 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.LoggedElement;
+
 import java.time.Duration;
 
-public class CheckoutStepTwoPage extends BasePage {
+public class CheckoutStepTwoPage extends AuthorizedPage {
 
     @FindBy(className = "inventory_item_name")
     private WebElement itemName;
@@ -26,24 +28,15 @@ public class CheckoutStepTwoPage extends BasePage {
     }
 
     public String getItemName() {
-        logger.debug("Retrieving item name from overview page");
-        String productName = itemName.getText();
-        logger.info("Overview item name: '{}'", productName);
-        return productName;
+        return new LoggedElement(itemName).getText("Overview Item Name");
     }
 
     public String getTaxText() {
-        logger.debug("Retrieving tax amount");
-        String tax = taxLabel.getText();
-        logger.info("Tax label text: '{}'", tax);
-        return tax;
+        return new LoggedElement(taxLabel).getText("Tax Label");
     }
 
     public String getTotalText() {
-        logger.debug("Retrieving total amount");
-        String totalPrice = totalLabel.getText();
-        logger.info("Total label text: '{}'", totalPrice);
-        return totalPrice;
+        return new LoggedElement(totalLabel).getText("Total Label");
     }
 
     public void clickFinish() {
@@ -51,7 +44,6 @@ public class CheckoutStepTwoPage extends BasePage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(finishButton)); //Explicit wait
 
-        logger.info("Clicking Finish button");
-        finishButton.click();
+        new LoggedElement(finishButton).click("Finish Button");
     }
 }

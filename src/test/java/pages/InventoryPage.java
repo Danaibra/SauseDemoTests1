@@ -3,9 +3,11 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utils.LoggedElement;
+
 import java.util.List;
 
-public class InventoryPage extends BasePage {
+public class InventoryPage extends AuthorizedPage {
     @FindBy(className = "title")
     private WebElement pageTitle;
     @FindBy(id = "add-to-cart-sauce-labs-backpack")
@@ -18,11 +20,12 @@ public class InventoryPage extends BasePage {
         super(driver);
     }
 
+    public boolean isPageLoaded() {
+        return getCurrentUrl().contains("inventory.html");
+    }
+
     public String getTitleText() {
-        logger.debug("Fetching inventory page title text");
-        String inventoryTitle = pageTitle.getText();
-        logger.info("Inventory page title is: '{}'", inventoryTitle);
-        return inventoryTitle;
+        return new LoggedElement(pageTitle).getText("Inventory Page Title");
     }
 
     public int getProductsCount() {
@@ -33,19 +36,14 @@ public class InventoryPage extends BasePage {
     }
 
     public void addBackpackToCart() {
-        logger.info("Clicking 'Add to Cart' button for Sauce Labs Backpack");
-        addToCartBackpack.click();
+        new LoggedElement(addToCartBackpack).click("Add Backpack To Cart Button");
     }
 
     public String getCartBadgeText() {
-        logger.debug("Retrieving cart badge number");
-        String badgeText = cartBadge.getText();
-        logger.info("Cart badge count is: '{}'", badgeText);
-        return badgeText;
+        return new LoggedElement(cartBadge).getText("Cart Badge Counter");
     }
 
     public void goToCart() {
-        logger.info("Clicking cart button");
-        cartButton.click();
+        new LoggedElement(cartButton).click("Cart Link");
     }
 }
