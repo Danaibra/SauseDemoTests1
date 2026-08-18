@@ -1,0 +1,182 @@
+2026-08-13 13:31:43 [main] INFO  tests.BaseTest - Starting browser setup (browser property: chrome)
+2026-08-13 13:31:45 [main] INFO  tests.BaseTest - navigating to base url: https://www.saucedemo.com
+2026-08-13 13:31:47 [main] INFO  tests.BaseTest - Executing @BeforeMethod: Logging in with standard user
+2026-08-13 13:31:47 [main] DEBUG pages.LoginPage - Page object initialized: LoginPage
+2026-08-13 13:31:47 [main] INFO  pages.LoginPage - Logging in user: standard_user
+2026-08-13 13:31:47 [main] INFO  pages.LoginPage - Entering username: standard_user
+2026-08-13 13:31:47 [main] INFO  pages.LoginPage - Entering password
+2026-08-13 13:31:47 [main] INFO  pages.LoginPage - Clicking login button
+2026-08-13 13:31:47 [main] DEBUG pages.InventoryPage - Page object initialized: InventoryPage
+2026-08-13 13:31:47 [main] INFO  tests.BaseTest - Starting testLogin execution
+2026-08-13 13:31:47 [main] INFO  tests.BaseTest - URL assertion passed: Inventory page loaded correctly
+2026-08-13 13:31:47 [main] DEBUG pages.InventoryPage - Fetching inventory page title text
+2026-08-13 13:31:47 [main] INFO  pages.InventoryPage - Inventory page title is: 'Products'
+2026-08-13 13:31:47 [main] INFO  tests.BaseTest - Title assertion passed: Page title is 'Products'
+2026-08-13 13:31:47 [main] DEBUG pages.InventoryPage - Counting product items on page
+2026-08-13 13:31:47 [main] INFO  pages.InventoryPage - Found 6 products on the page
+2026-08-13 13:31:47 [main] INFO  tests.BaseTest - Products count assertion passed: Product list is not empty
+2026-08-13 13:31:47 [main] INFO  tests.BaseTest - Closing browser and tearing down driver
+2026-08-13 13:31:55 [main] INFO  tests.BaseTest - Starting browser setup (browser property: chrome)
+2026-08-13 13:31:56 [main] INFO  tests.BaseTest - navigating to base url: https://www.saucedemo.com
+2026-08-13 13:31:57 [main] INFO  tests.BaseTest - Executing @BeforeMethod: Logging in with standard user
+2026-08-13 13:31:57 [main] DEBUG pages.LoginPage - Page object initialized: LoginPage
+2026-08-13 13:31:57 [main] INFO  pages.LoginPage - Logging in user: standard_user
+2026-08-13 13:31:57 [main] INFO  pages.LoginPage - Entering username: standard_user
+2026-08-13 13:31:57 [main] INFO  pages.LoginPage - Entering password
+2026-08-13 13:31:57 [main] INFO  pages.LoginPage - Clicking login button
+2026-08-13 13:31:57 [main] DEBUG pages.InventoryPage - Page object initialized: InventoryPage
+2026-08-13 13:31:57 [main] INFO  tests.BaseTest - Starting testLogin execution
+2026-08-13 13:31:57 [main] INFO  tests.BaseTest - URL assertion passed: Inventory page loaded correctly
+2026-08-13 13:31:57 [main] DEBUG pages.InventoryPage - Fetching inventory page title text
+2026-08-13 13:31:57 [main] INFO  pages.InventoryPage - Inventory page title is: 'Products'
+2026-08-13 13:31:57 [main] INFO  tests.BaseTest - Title assertion passed: Page title is 'Products'
+2026-08-13 13:31:57 [main] DEBUG pages.InventoryPage - Counting product items on page
+2026-08-13 13:31:57 [main] INFO  pages.InventoryPage - Found 6 products on the page
+2026-08-13 13:31:57 [main] INFO  tests.BaseTest - Products count assertion passed: Product list is not empty
+2026-08-13 13:31:57 [main] INFO  tests.BaseTest - Closing browser and tearing down driver
+2026-08-13 13:32:06 [main] INFO  tests.BaseTest - Starting browser setup (browser property: chrome)
+2026-08-13 13:32:07 [main] INFO  tests.BaseTest - navigating to base url: https://www.saucedemo.com
+2026-08-13 13:32:07 [main] INFO  tests.BaseTest - Executing @BeforeMethod: Logging in with standard user
+2026-08-13 13:32:07 [main] DEBUG pages.LoginPage - Page object initialized: LoginPage
+2026-08-13 13:32:07 [main] INFO  pages.LoginPage - Logging in user: standard_user
+2026-08-13 13:32:07 [main] INFO  pages.LoginPage - Entering username: standard_user
+2026-08-13 13:32:07 [main] INFO  pages.LoginPage - Entering password
+2026-08-13 13:32:07 [main] INFO  pages.LoginPage - Clicking login button
+2026-08-13 13:32:07 [main] DEBUG pages.InventoryPage - Page object initialized: InventoryPage
+2026-08-13 13:32:07 [main] INFO  tests.BaseTest - Starting testAddToCart execution
+2026-08-13 13:32:07 [main] INFO  pages.InventoryPage - Clicking 'Add to Cart' button for Sauce Labs Backpack
+2026-08-13 13:32:07 [main] DEBUG pages.InventoryPage - Retrieving cart badge number
+2026-08-13 13:32:07 [main] INFO  pages.InventoryPage - Cart badge count is: '1'
+2026-08-13 13:32:07 [main] INFO  tests.BaseTest - Cart badge count verified: 1 item added
+2026-08-13 13:32:07 [main] INFO  pages.InventoryPage - Clicking cart button
+2026-08-13 13:32:07 [main] DEBUG pages.CartPage - Page object initialized: CartPage
+2026-08-13 13:32:07 [main] INFO  tests.BaseTest - Navigated to Cart page successfully
+2026-08-13 13:32:07 [main] DEBUG pages.CartPage - Retrieving cart item name
+2026-08-13 13:32:08 [main] INFO  pages.CartPage - Cart item name is: Sauce Labs Backpack
+2026-08-13 13:32:08 [main] INFO  tests.BaseTest - Verified item in cart: 'Sauce Labs Backpack'
+2026-08-13 13:32:08 [main] INFO  tests.BaseTest - Closing browser and tearing down driver
+2026-08-13 13:32:16 [main] INFO  tests.BaseTest - Starting browser setup (browser property: chrome)
+2026-08-13 13:32:17 [main] INFO  tests.BaseTest - navigating to base url: https://www.saucedemo.com
+2026-08-13 13:32:17 [main] INFO  tests.BaseTest - Executing @BeforeMethod: Logging in with standard user
+2026-08-13 13:32:17 [main] DEBUG pages.LoginPage - Page object initialized: LoginPage
+2026-08-13 13:32:17 [main] INFO  pages.LoginPage - Logging in user: standard_user
+2026-08-13 13:32:17 [main] INFO  pages.LoginPage - Entering username: standard_user
+2026-08-13 13:32:17 [main] INFO  pages.LoginPage - Entering password
+2026-08-13 13:32:17 [main] INFO  pages.LoginPage - Clicking login button
+2026-08-13 13:32:17 [main] DEBUG pages.InventoryPage - Page object initialized: InventoryPage
+2026-08-13 13:32:17 [main] INFO  tests.BaseTest - Starting testFullPurchase execution
+2026-08-13 13:32:17 [main] INFO  pages.InventoryPage - Clicking 'Add to Cart' button for Sauce Labs Backpack
+2026-08-13 13:32:17 [main] INFO  pages.InventoryPage - Clicking cart button
+2026-08-13 13:32:17 [main] DEBUG pages.CartPage - Page object initialized: CartPage
+2026-08-13 13:32:17 [main] INFO  pages.CartPage - Clicking checkout button
+2026-08-13 13:32:17 [main] DEBUG pages.CheckoutPage - Page object initialized: CheckoutPage
+2026-08-13 13:32:17 [main] INFO  pages.CheckoutPage - Entering customer details: First Name='Dana', Last Name='Ibrayeva', Zip='44012'
+2026-08-13 13:32:18 [main] INFO  pages.CheckoutPage - Clicking Continue button
+2026-08-13 13:32:18 [main] DEBUG pages.CheckoutStepTwoPage - Page object initialized: CheckoutStepTwoPage
+2026-08-13 13:32:18 [main] DEBUG pages.CheckoutStepTwoPage - Waiting up to 5 seconds for Finish button to be clickable
+2026-08-13 13:32:18 [main] INFO  pages.CheckoutStepTwoPage - Clicking Finish button
+2026-08-13 13:32:18 [main] DEBUG pages.CheckoutCompletePage - Page object initialized: CheckoutCompletePage
+2026-08-13 13:32:18 [main] INFO  tests.BaseTest - URL assertion passed: Checkout complete page loaded
+2026-08-13 13:32:18 [main] DEBUG pages.CheckoutCompletePage - Fetching checkout complete header text
+2026-08-13 13:32:18 [main] INFO  pages.CheckoutCompletePage - Checkout header complete text is: Thank you for your order!
+2026-08-13 13:32:18 [main] INFO  tests.BaseTest - Header assertion passed: 'Thank you for your order!' verified
+2026-08-13 13:32:18 [main] DEBUG pages.CheckoutCompletePage - Checking visibility of back home button
+2026-08-13 13:32:18 [main] INFO  pages.CheckoutCompletePage - 'Back Home' button displayed status: true
+2026-08-13 13:32:18 [main] INFO  tests.BaseTest - Assertion passed: Back Home button is visible
+2026-08-13 13:32:18 [main] INFO  tests.BaseTest - Closing browser and tearing down driver
+2026-08-13 13:32:28 [main] INFO  tests.BaseTest - Starting browser setup (browser property: chrome)
+2026-08-13 13:32:29 [main] INFO  tests.BaseTest - navigating to base url: https://www.saucedemo.com
+2026-08-13 13:32:29 [main] INFO  tests.BaseTest - Executing @BeforeMethod: Logging in with standard user
+2026-08-13 13:32:29 [main] DEBUG pages.LoginPage - Page object initialized: LoginPage
+2026-08-13 13:32:29 [main] INFO  pages.LoginPage - Logging in user: standard_user
+2026-08-13 13:32:29 [main] INFO  pages.LoginPage - Entering username: standard_user
+2026-08-13 13:32:29 [main] INFO  pages.LoginPage - Entering password
+2026-08-13 13:32:29 [main] INFO  pages.LoginPage - Clicking login button
+2026-08-13 13:32:29 [main] DEBUG pages.InventoryPage - Page object initialized: InventoryPage
+2026-08-13 13:32:29 [main] INFO  tests.BaseTest - Starting testFailedScenarioForScreenshot execution (intended to fail)
+2026-08-13 13:32:29 [main] DEBUG pages.InventoryPage - Fetching inventory page title text
+2026-08-13 13:32:29 [main] INFO  pages.InventoryPage - Inventory page title is: 'Products'
+2026-08-13 13:32:29 [main] INFO  tests.BaseTest - Current title is: 'Products', expecting wrong title for screenshot test
+2026-08-13 13:32:29 [main] INFO  tests.BaseTest - Closing browser and tearing down driver
+2026-08-13 13:32:48 [main] INFO  tests.BaseTest - Starting browser setup (browser property: chrome)
+2026-08-13 13:32:49 [main] INFO  tests.BaseTest - navigating to base url: https://www.saucedemo.com
+2026-08-13 13:32:49 [main] INFO  tests.BaseTest - Executing @BeforeMethod: Logging in with standard user
+2026-08-13 13:32:49 [main] DEBUG pages.LoginPage - Page object initialized: LoginPage
+2026-08-13 13:32:49 [main] INFO  pages.LoginPage - Logging in user: standard_user
+2026-08-13 13:32:49 [main] INFO  pages.LoginPage - Entering username: standard_user
+2026-08-13 13:32:49 [main] INFO  pages.LoginPage - Entering password
+2026-08-13 13:32:49 [main] INFO  pages.LoginPage - Clicking login button
+2026-08-13 13:32:49 [main] DEBUG pages.InventoryPage - Page object initialized: InventoryPage
+2026-08-13 13:32:49 [main] INFO  tests.BaseTest - Starting testAddToCart execution
+2026-08-13 13:32:49 [main] INFO  pages.InventoryPage - Clicking 'Add to Cart' button for Sauce Labs Backpack
+2026-08-13 13:32:49 [main] DEBUG pages.InventoryPage - Retrieving cart badge number
+2026-08-13 13:32:49 [main] INFO  pages.InventoryPage - Cart badge count is: '1'
+2026-08-13 13:32:49 [main] INFO  tests.BaseTest - Cart badge count verified: 1 item added
+2026-08-13 13:32:49 [main] INFO  pages.InventoryPage - Clicking cart button
+2026-08-13 13:32:49 [main] DEBUG pages.CartPage - Page object initialized: CartPage
+2026-08-13 13:32:49 [main] INFO  tests.BaseTest - Navigated to Cart page successfully
+2026-08-13 13:32:49 [main] DEBUG pages.CartPage - Retrieving cart item name
+2026-08-13 13:32:49 [main] INFO  pages.CartPage - Cart item name is: Sauce Labs Backpack
+2026-08-13 13:32:49 [main] INFO  tests.BaseTest - Verified item in cart: 'Sauce Labs Backpack'
+2026-08-13 13:32:49 [main] INFO  tests.BaseTest - Closing browser and tearing down driver
+2026-08-13 13:32:49 [main] INFO  tests.BaseTest - Starting browser setup (browser property: chrome)
+2026-08-13 13:32:50 [main] INFO  tests.BaseTest - navigating to base url: https://www.saucedemo.com
+2026-08-13 13:32:50 [main] INFO  tests.BaseTest - Executing @BeforeMethod: Logging in with standard user
+2026-08-13 13:32:50 [main] DEBUG pages.LoginPage - Page object initialized: LoginPage
+2026-08-13 13:32:50 [main] INFO  pages.LoginPage - Logging in user: standard_user
+2026-08-13 13:32:50 [main] INFO  pages.LoginPage - Entering username: standard_user
+2026-08-13 13:32:50 [main] INFO  pages.LoginPage - Entering password
+2026-08-13 13:32:50 [main] INFO  pages.LoginPage - Clicking login button
+2026-08-13 13:32:51 [main] DEBUG pages.InventoryPage - Page object initialized: InventoryPage
+2026-08-13 13:32:51 [main] INFO  tests.BaseTest - Starting testFailedScenarioForScreenshot execution (intended to fail)
+2026-08-13 13:32:51 [main] DEBUG pages.InventoryPage - Fetching inventory page title text
+2026-08-13 13:32:51 [main] INFO  pages.InventoryPage - Inventory page title is: 'Products'
+2026-08-13 13:32:51 [main] INFO  tests.BaseTest - Current title is: 'Products', expecting wrong title for screenshot test
+2026-08-13 13:32:51 [main] INFO  tests.BaseTest - Closing browser and tearing down driver
+2026-08-13 13:32:51 [main] INFO  tests.BaseTest - Starting browser setup (browser property: chrome)
+2026-08-13 13:32:51 [main] INFO  tests.BaseTest - navigating to base url: https://www.saucedemo.com
+2026-08-13 13:32:52 [main] INFO  tests.BaseTest - Executing @BeforeMethod: Logging in with standard user
+2026-08-13 13:32:52 [main] DEBUG pages.LoginPage - Page object initialized: LoginPage
+2026-08-13 13:32:52 [main] INFO  pages.LoginPage - Logging in user: standard_user
+2026-08-13 13:32:52 [main] INFO  pages.LoginPage - Entering username: standard_user
+2026-08-13 13:32:52 [main] INFO  pages.LoginPage - Entering password
+2026-08-13 13:32:52 [main] INFO  pages.LoginPage - Clicking login button
+2026-08-13 13:32:52 [main] DEBUG pages.InventoryPage - Page object initialized: InventoryPage
+2026-08-13 13:32:52 [main] INFO  tests.BaseTest - Starting testFullPurchase execution
+2026-08-13 13:32:52 [main] INFO  pages.InventoryPage - Clicking 'Add to Cart' button for Sauce Labs Backpack
+2026-08-13 13:32:52 [main] INFO  pages.InventoryPage - Clicking cart button
+2026-08-13 13:32:52 [main] DEBUG pages.CartPage - Page object initialized: CartPage
+2026-08-13 13:32:52 [main] INFO  pages.CartPage - Clicking checkout button
+2026-08-13 13:32:52 [main] DEBUG pages.CheckoutPage - Page object initialized: CheckoutPage
+2026-08-13 13:32:52 [main] INFO  pages.CheckoutPage - Entering customer details: First Name='Dana', Last Name='Ibrayeva', Zip='44012'
+2026-08-13 13:32:52 [main] INFO  pages.CheckoutPage - Clicking Continue button
+2026-08-13 13:32:52 [main] DEBUG pages.CheckoutStepTwoPage - Page object initialized: CheckoutStepTwoPage
+2026-08-13 13:32:52 [main] DEBUG pages.CheckoutStepTwoPage - Waiting up to 5 seconds for Finish button to be clickable
+2026-08-13 13:32:52 [main] INFO  pages.CheckoutStepTwoPage - Clicking Finish button
+2026-08-13 13:32:52 [main] DEBUG pages.CheckoutCompletePage - Page object initialized: CheckoutCompletePage
+2026-08-13 13:32:52 [main] INFO  tests.BaseTest - URL assertion passed: Checkout complete page loaded
+2026-08-13 13:32:52 [main] DEBUG pages.CheckoutCompletePage - Fetching checkout complete header text
+2026-08-13 13:32:52 [main] INFO  pages.CheckoutCompletePage - Checkout header complete text is: Thank you for your order!
+2026-08-13 13:32:52 [main] INFO  tests.BaseTest - Header assertion passed: 'Thank you for your order!' verified
+2026-08-13 13:32:52 [main] DEBUG pages.CheckoutCompletePage - Checking visibility of back home button
+2026-08-13 13:32:52 [main] INFO  pages.CheckoutCompletePage - 'Back Home' button displayed status: true
+2026-08-13 13:32:52 [main] INFO  tests.BaseTest - Assertion passed: Back Home button is visible
+2026-08-13 13:32:52 [main] INFO  tests.BaseTest - Closing browser and tearing down driver
+2026-08-13 13:32:52 [main] INFO  tests.BaseTest - Starting browser setup (browser property: chrome)
+2026-08-13 13:32:53 [main] INFO  tests.BaseTest - navigating to base url: https://www.saucedemo.com
+2026-08-13 13:32:53 [main] INFO  tests.BaseTest - Executing @BeforeMethod: Logging in with standard user
+2026-08-13 13:32:53 [main] DEBUG pages.LoginPage - Page object initialized: LoginPage
+2026-08-13 13:32:53 [main] INFO  pages.LoginPage - Logging in user: standard_user
+2026-08-13 13:32:53 [main] INFO  pages.LoginPage - Entering username: standard_user
+2026-08-13 13:32:53 [main] INFO  pages.LoginPage - Entering password
+2026-08-13 13:32:53 [main] INFO  pages.LoginPage - Clicking login button
+2026-08-13 13:32:54 [main] DEBUG pages.InventoryPage - Page object initialized: InventoryPage
+2026-08-13 13:32:54 [main] INFO  tests.BaseTest - Starting testLogin execution
+2026-08-13 13:32:54 [main] INFO  tests.BaseTest - URL assertion passed: Inventory page loaded correctly
+2026-08-13 13:32:54 [main] DEBUG pages.InventoryPage - Fetching inventory page title text
+2026-08-13 13:32:54 [main] INFO  pages.InventoryPage - Inventory page title is: 'Products'
+2026-08-13 13:32:54 [main] INFO  tests.BaseTest - Title assertion passed: Page title is 'Products'
+2026-08-13 13:32:54 [main] DEBUG pages.InventoryPage - Counting product items on page
+2026-08-13 13:32:54 [main] INFO  pages.InventoryPage - Found 6 products on the page
+2026-08-13 13:32:54 [main] INFO  tests.BaseTest - Products count assertion passed: Product list is not empty
+2026-08-13 13:32:54 [main] INFO  tests.BaseTest - Closing browser and tearing down driver
