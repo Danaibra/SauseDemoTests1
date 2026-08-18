@@ -1,6 +1,6 @@
-package Tests;
+package tests;
 
-import Pages.*;
+import pages.*;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;

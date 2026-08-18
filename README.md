@@ -3,8 +3,8 @@
 Automated UI tests for [SauceDemo](https://www.saucedemo.com/) using Java, Selenium WebDriver, and TestNG.
 
 ## Project Structure
-- **Pages**: Page Object Model classes (`LoginPage`, `InventoryPage`, `CartPage`, `CheckoutPage`, `CheckoutStepTwoPage`, `CheckoutCompletePage`).
-- **Tests**: Test suites and setup (`BaseTest`, `SauceDemoTest`).
+- **pages**: Page Object Model classes (`LoginPage`, `InventoryPage`, `CartPage`, `CheckoutPage`, `CheckoutStepTwoPage`, `CheckoutCompletePage`).
+- **tests**: Test suites and setup (`BaseTest`, `SauceDemoTest`).
 
 ## Test Scenarios (8-10 Steps Each)
 
