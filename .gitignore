@@ -36,11 +36,15 @@ build/
 .vscode/
 
 ### Mac OS ###
-.DS_Store
 .idea/
+*.iml
+out/
+target/
+.DS_Store
 # Logs
 logs/
 *.log
+target/
 
 # Test Results & Screenshots
 target/

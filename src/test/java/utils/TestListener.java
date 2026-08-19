@@ -40,7 +40,7 @@ public class TestListener implements ITestListener {
             try {
                 Files.copy(srcFile.toPath(), destFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
                 logger.error("Test failed: {}", result.getName());
-                logger.error("Screenshot saved at: {}", destFile.getAbsolutePath()); // Изменили info на error
+                logger.error("Screenshot saved at: {}", destFile.getAbsolutePath());
             } catch (IOException e) {
                 logger.error("Failed to save screenshot: {}", e.getMessage(), e);
             }
