@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.List;
 
 public class InventoryPage extends BasePage {
@@ -20,22 +19,33 @@ public class InventoryPage extends BasePage {
     }
 
     public String getTitleText() {
-        return pageTitle.getText();
+        logger.debug("Fetching inventory page title text");
+        String inventoryTitle = pageTitle.getText();
+        logger.info("Inventory page title is: '{}'", inventoryTitle);
+        return inventoryTitle;
     }
 
     public int getProductsCount() {
-        return inventoryItems.size();
+        logger.debug("Counting product items on page");
+        int inventoryListCount = inventoryItems.size();
+        logger.info("Found {} products on the page", inventoryListCount);
+        return inventoryListCount;
     }
 
     public void addBackpackToCart() {
+        logger.info("Clicking 'Add to Cart' button for Sauce Labs Backpack");
         addToCartBackpack.click();
     }
 
     public String getCartBadgeText() {
-        return cartBadge.getText();
+        logger.debug("Retrieving cart badge number");
+        String badgeText = cartBadge.getText();
+        logger.info("Cart badge count is: '{}'", badgeText);
+        return badgeText;
     }
 
     public void goToCart() {
+        logger.info("Clicking cart button");
         cartButton.click();
     }
 }

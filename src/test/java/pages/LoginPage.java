@@ -1,13 +1,11 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import models.User;
 
-public class LoginPage {
-    private final WebDriver driver;
+public class LoginPage extends BasePage {
 
     @FindBy(id = "user-name")
     private WebElement usernameInput;
@@ -17,29 +15,29 @@ public class LoginPage {
     private WebElement loginButton;
 
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
+
     public void enterUsername(String username) {
+        logger.info("Entering username: {}", username);
         usernameInput.click();
         usernameInput.sendKeys(username);
     }
 
-    public void clearUsername() {
-        usernameInput.clear();
-    }
-
     public void enterPassword(String password) {
+        logger.info("Entering password");
         passwordInput.sendKeys(password);
     }
 
     public void clickLogin() {
+        logger.info("Clicking login button");
         loginButton.click();
     }
 
-    public void login(String username, String password) {
-        enterUsername(username);
-        enterPassword(password);
+    public void login(User user) {
+        logger.info("Logging in user: {}", user.username());
+        enterUsername(user.username());
+        enterPassword(user.password());
         clickLogin();
     }
 }

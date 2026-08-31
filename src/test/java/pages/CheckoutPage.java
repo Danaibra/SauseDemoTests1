@@ -1,13 +1,12 @@
 package pages;
 
-import org.openqa.selenium.By;
+import models.Customer;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class CheckoutPage {
-    private final WebDriver driver;
+
+public class CheckoutPage extends BasePage{
 
     @FindBy(id = "first-name")
     private WebElement firstNameInput;
@@ -19,15 +18,24 @@ public class CheckoutPage {
     private WebElement continueButton;
 
     public CheckoutPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
 
-    public void enterCheckoutInfo(String firstName, String lastName, String postalCode) {
-        firstNameInput.sendKeys(firstName);
-        lastNameInput.sendKeys(lastName);
-        postalCodeInput.sendKeys(postalCode);
+    public void enterCheckoutInfo(Customer customer) {
+        logger.info("Entering customer details: First Name='{}', Last Name='{}', Zip='{}'",
+                customer.firstName(), customer.lastName(), customer.zipCode());
+
+        firstNameInput.clear();
+        firstNameInput.sendKeys(customer.firstName());
+
+        lastNameInput.clear();
+        lastNameInput.sendKeys(customer.lastName());
+
+        postalCodeInput.clear();
+        postalCodeInput.sendKeys(customer.zipCode());
+
+        logger.info("Clicking Continue button");
         continueButton.click();
     }
 }

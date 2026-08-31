@@ -2,18 +2,20 @@ package utils;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class TestDataReader {
-    private static Properties properties = new Properties();
+    private static final Properties properties = new Properties();
 
     static {
-        try {
-            FileInputStream file = new FileInputStream("src/test/resources/testdata.properties");
+        try (InputStream file = TestDataReader.class.getClassLoader().getResourceAsStream("testdata.properties")) {
+            if (file == null) {
+                throw new RuntimeException("testdata.properties not found on classpath.");
+            }
             properties.load(file);
         } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException("Could not load properties file.");
+            throw new RuntimeException("Failed to load testdata.properties", e);
         }
     }
 

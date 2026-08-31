@@ -3,10 +3,8 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class CartPage {
-    private final WebDriver driver;
+public class CartPage extends BasePage{
 
     @FindBy(className = "inventory_item_name")
     private WebElement cartItem;
@@ -15,19 +13,25 @@ public class CartPage {
     private WebElement checkoutButton;
 
     public CartPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     public String getItemName() {
-        return cartItem.getText();
+        logger.debug("Retrieving cart item name"); // Technical/debug log
+        String itemName = cartItem.getText();
+        logger.info("Cart item name is: {}", itemName); // Action/result log
+        return itemName;
     }
 
     public boolean isCheckoutButtonEnabled() {
-        return checkoutButton.isEnabled();
+        logger.debug("Checking if checkout button is enabled");
+        boolean isEnabledCheckoutButton = checkoutButton.isEnabled();
+        logger.info("Checkout button is enabled status: {}", isEnabledCheckoutButton);
+        return isEnabledCheckoutButton;
     }
 
     public void goToCheckOut() {
+        logger.info("Clicking checkout button"); // Action log
         checkoutButton.click();
     }
 }
