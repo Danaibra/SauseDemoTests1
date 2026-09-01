@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utils.LoggedElement;
 
 public class CartPage extends AuthorizedPage{
 
@@ -17,19 +16,22 @@ public class CartPage extends AuthorizedPage{
         super(driver);
     }
 
-    public boolean isPageLoaded() {
-        return getCurrentUrl().contains("cart.html");
-    }
-
     public String getItemName() {
-        return new LoggedElement(cartItem).getText("Cart Item Name");
+        logger.debug("Retrieving cart item name"); // Technical/debug log
+        String itemName = cartItem.getText();
+        logger.info("Cart item name is: {}", itemName); // Action/result log
+        return itemName;
     }
 
     public boolean isCheckoutButtonEnabled() {
-        return new LoggedElement(checkoutButton).isEnabled("CheckoutButton");
+        logger.debug("Checking if checkout button is enabled");
+        boolean isEnabledCheckoutButton = checkoutButton.isEnabled();
+        logger.info("Checkout button is enabled status: {}", isEnabledCheckoutButton);
+        return isEnabledCheckoutButton;
     }
 
     public void goToCheckOut() {
-        new LoggedElement(checkoutButton).click("Checkout Button");
+        logger.info("Clicking checkout button"); // Action log
+        checkoutButton.click();
     }
 }

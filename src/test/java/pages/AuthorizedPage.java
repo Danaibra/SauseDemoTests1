@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utils.LoggedElement;
 
 public abstract class AuthorizedPage extends BasePage {
 
@@ -15,13 +14,5 @@ public abstract class AuthorizedPage extends BasePage {
 
     public AuthorizedPage(WebDriver driver) {
         super(driver);
-    }
-
-    public void goToCart() {
-        new LoggedElement(cartButton).click("Cart Link");
-    }
-
-    public String getCartBadgeText() {
-        return new LoggedElement(cartBadge).getText("Cart Badge Counter");
     }
 }

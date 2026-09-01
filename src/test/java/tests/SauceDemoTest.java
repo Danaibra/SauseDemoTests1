@@ -20,12 +20,12 @@ public class SauceDemoTest extends BaseTest {
 
     @Test
     public void testLogin() {
+        logger.info("Starting testLogin execution");
         Assert.assertTrue(
-                inventoryPage.isPageLoaded(),
-                "Inventory page is not loaded correctly."
+                inventoryPage.getCurrentUrl().contains("inventory.html"),
+                "Inventory page URL is incorrect."
         );
         logger.info("URL assertion passed: Inventory page loaded correctly");
-
         Assert.assertEquals(
                 inventoryPage.getTitleText(),
                 "Products",
@@ -49,7 +49,7 @@ public class SauceDemoTest extends BaseTest {
 
         inventoryPage.goToCart();
         CartPage cartPage = new CartPage(driver);
-        Assert.assertTrue(cartPage.isPageLoaded(), "Cart page is not loaded correctly.");
+        Assert.assertTrue(cartPage.getCurrentUrl().contains("cart.html"));
         logger.info("Navigated to Cart page successfully");
 
         Assert.assertEquals(cartPage.getItemName(), "Sauce Labs Backpack");
@@ -74,8 +74,8 @@ public class SauceDemoTest extends BaseTest {
         CheckoutCompletePage completePage = new CheckoutCompletePage(driver);
 
         Assert.assertTrue(
-                completePage.isPageLoaded(),
-                "Order completion page is not loaded correctly."
+                completePage.getCurrentUrl().contains("checkout-complete.html"),
+                "Order completion page URL is incorrect."
         );
         logger.info("URL assertion passed: Checkout complete page loaded");
 
@@ -92,7 +92,7 @@ public class SauceDemoTest extends BaseTest {
         );
         logger.info("Assertion passed: Back Home button is visible");
     }
-    //failing test for checking "make a screenshot in case of test failure"
+
     @Test
     public void testFailedScenarioForScreenshot() {
         logger.info("Starting testFailedScenarioForScreenshot execution (intended to fail)");

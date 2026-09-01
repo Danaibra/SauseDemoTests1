@@ -4,10 +4,9 @@ import models.Customer;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utils.LoggedElement;
 
 
-public class CheckoutPage extends AuthorizedPage{
+public class CheckoutPage extends BasePage{
 
     @FindBy(id = "first-name")
     private WebElement firstNameInput;
@@ -24,15 +23,19 @@ public class CheckoutPage extends AuthorizedPage{
 
 
     public void enterCheckoutInfo(Customer customer) {
+        logger.info("Entering customer details: First Name='{}', Last Name='{}', Zip='{}'",
+                customer.firstName(), customer.lastName(), customer.zipCode());
+
         firstNameInput.clear();
-        new LoggedElement(firstNameInput).sendKeys(customer.firstName(), "First Name Field");
+        firstNameInput.sendKeys(customer.firstName());
 
         lastNameInput.clear();
-        new LoggedElement(lastNameInput).sendKeys(customer.lastName(), "Last Name Field");
+        lastNameInput.sendKeys(customer.lastName());
 
         postalCodeInput.clear();
-        new LoggedElement(postalCodeInput).sendKeys(customer.zipCode(), "Postal Code Field");
+        postalCodeInput.sendKeys(customer.zipCode());
 
-        new LoggedElement(continueButton).click("Continue Button");
+        logger.info("Clicking Continue button");
+        continueButton.click();
     }
 }

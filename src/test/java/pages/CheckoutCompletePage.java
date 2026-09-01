@@ -5,11 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import utils.LoggedElement;
-
 import java.time.Duration;
 
-public class CheckoutCompletePage extends AuthorizedPage{
+public class CheckoutCompletePage extends BasePage{
 
     @FindBy(css = ("[data-test='title']"))
     private WebElement completeTitle;
@@ -23,23 +21,26 @@ public class CheckoutCompletePage extends AuthorizedPage{
     public CheckoutCompletePage(WebDriver driver) {
         super(driver);
     }
-
-    public boolean isPageLoaded() {
-        return getCurrentUrl().contains("checkout-complete.html");
-    }
-
     public String getTitleText() {
         logger.debug("Waiting up to 5 seconds for complete title visibility");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOf(completeTitle)); // explicit waiting
 
-        return new LoggedElement(completeTitle).getText("Complete Title");
+        String titleText = completeTitle.getText();
+        logger.info("Complete title text received: '{}'", titleText);
+        return titleText;
     }
     public String getHeaderText() {
-        return new LoggedElement(completeHeader).getText("Complete Header");
+        logger.debug("Fetching checkout complete header text");
+        String headerText = completeHeader.getText();
+        logger.info("Checkout header complete text is: {}", headerText);
+        return headerText;
     }
     public boolean isBackHomeButtonDisplayed() {
-        return new LoggedElement(backHomeButton).isDisplayed("Back Home Button");
+        logger.debug("Checking visibility of back home button");
+        boolean isBackHomeButtonVisible = backHomeButton.isDisplayed();
+        logger.info("'Back Home' button displayed status: {}", isBackHomeButtonVisible);
+        return isBackHomeButtonVisible;
     }
 
 
