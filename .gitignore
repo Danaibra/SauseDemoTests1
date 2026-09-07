@@ -44,3 +44,5 @@ logs/
 
 # Test Results & Screenshots
 target/
+
+.ai/
