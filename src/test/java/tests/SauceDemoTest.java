@@ -63,7 +63,10 @@ public class SauceDemoTest extends BaseTest {
         inventoryPage.goToCart();
 
         CartPage cartPage = new CartPage(driver);
+        Assert.assertTrue(cartPage.isCheckoutButtonEnabled(), "Checkout button should be enabled!");
+        logger.info("Assertion passed: Checkout button is enabled");
         cartPage.goToCheckOut();
+
 
         CheckoutPage checkoutPage = new CheckoutPage(driver);
         checkoutPage.enterCheckoutInfo(Customer.getStandardCustomer());
