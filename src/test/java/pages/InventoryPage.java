@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utils.LoggedElement;
+
 import java.util.List;
 
 public class InventoryPage extends AuthorizedPage {
@@ -19,33 +21,25 @@ public class InventoryPage extends AuthorizedPage {
     }
 
     public String getTitleText() {
-        logger.debug("Fetching inventory page title text");
-        String inventoryTitle = pageTitle.getText();
-        logger.info("Inventory page title is: '{}'", inventoryTitle);
-        return inventoryTitle;
+        return new LoggedElement(pageTitle).getText("Inventory Page Title");
     }
 
     public int getProductsCount() {
         logger.debug("Counting product items on page");
-        int inventoryListCount = inventoryItems.size();
-        logger.info("Found {} products on the page", inventoryListCount);
-        return inventoryListCount;
+        int count = inventoryItems.size();
+        logger.info("Found {} products on the page", count);
+        return count;
     }
 
     public void addBackpackToCart() {
-        logger.info("Clicking 'Add to Cart' button for Sauce Labs Backpack");
-        addToCartBackpack.click();
+        new LoggedElement(addToCartBackpack).click("Sauce Labs Backpack 'Add to Cart' Button");
     }
 
     public String getCartBadgeText() {
-        logger.debug("Retrieving cart badge number");
-        String badgeText = cartBadge.getText();
-        logger.info("Cart badge count is: '{}'", badgeText);
-        return badgeText;
+        return new LoggedElement(cartBadge).getText("Cart Badge");
     }
 
     public void goToCart() {
-        logger.info("Clicking cart button");
-        cartButton.click();
+        new LoggedElement(cartButton).click("Cart Button");
     }
 }
