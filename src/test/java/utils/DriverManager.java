@@ -3,7 +3,6 @@ package utils;
 import org.openqa.selenium.WebDriver;
 
 public class DriverManager {
-    private static WebDriver driver;
 
     // each thread is having its own personal WebDriver
     private static final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
@@ -11,7 +10,7 @@ public class DriverManager {
     private DriverManager(){}
 
     public static WebDriver getDriver(){
-        if(driver == null){
+        if(driverThreadLocal.get() == null){
             String browser = ConfigReader.getProperty("browser");
             driverThreadLocal.set(DriverFactory.createDriver(browser));
         }

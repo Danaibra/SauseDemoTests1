@@ -46,7 +46,8 @@ public class LoggedElement implements WebElement{
 
     @Override
     public void click() {
-
+        logger.info("Clicking on element: " + element);
+        element.click();
     }
 
     @Override
@@ -123,6 +124,7 @@ public class LoggedElement implements WebElement{
     public String getCssValue(String propertyName) {
         return "";
     }
+
 
     @Override
     public <X> X getScreenshotAs(OutputType<X> target) throws WebDriverException {
