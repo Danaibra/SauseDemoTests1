@@ -6,40 +6,28 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import utils.ConfigReader;
-import utils.DriverFactory;
-import java.time.Duration;
+import utils.DriverManager;
 
-    public class BaseTest {
-        protected static final Logger logger = LogManager.getLogger(BaseTest.class);
-        protected WebDriver driver;
+public class BaseTest {
+    protected WebDriver driver;
+    protected final Logger logger = LogManager.getLogger(this.getClass());
 
     @BeforeMethod
-    protected void setup() {
-        String browser = System.getProperty("browser");
-        if (browser == null || browser.isEmpty()){
-            browser = ConfigReader.getProperty("browser", "chrome");
-        }
+    public void setup() {
+        driver = configureDriver();
+        driver.get(ConfigReader.getProperty("base.url"));
+    }
 
-        String baseUrl = ConfigReader.getProperty("base.url");
-
-        logger.info("Starting browser setup (browser property: {})", browser);
-        driver = DriverFactory.createDriver(browser);
-
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); //implicit wait
-        driver.manage().window().maximize();
-
-        logger.info("navigating to base url: {}", baseUrl);
-        driver.get(baseUrl);
+    private WebDriver configureDriver() {
+        return DriverManager.getDriver();
     }
 
     @AfterMethod
-    protected void tearDown() {
-        if (driver != null) {
-            logger.info("Closing browser and tearing down driver");
-            driver.quit();
-        }
+    public void tearDown() {
+        DriverManager.quitDriver();
     }
-        public WebDriver getDriver() {
-            return driver;
-        }
+
+    public WebDriver getDriver() {
+        return DriverManager.getDriver();
+    }
 }

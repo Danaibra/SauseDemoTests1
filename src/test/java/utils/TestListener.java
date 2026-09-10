@@ -9,7 +9,6 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
@@ -17,12 +16,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 
+
 public class TestListener implements ITestListener {
     private static final Logger logger = LogManager.getLogger(TestListener.class);
 
     @Override
     public void onTestFailure(ITestResult result) {
-        WebDriver driver = ((tests.BaseTest) result.getInstance()).getDriver();
+        WebDriver driver = DriverManager.getDriver();
 
         if (driver != null) {
             String screenshotDir = getScreenshotDir();

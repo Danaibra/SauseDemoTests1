@@ -22,7 +22,7 @@ public class SauceDemoTest extends BaseTest {
     public void testLogin() {
         logger.info("Starting testLogin execution");
         Assert.assertTrue(
-                driver.getCurrentUrl().contains("inventory.html"),
+                inventoryPage.getCurrentUrl().contains("inventory.html"),
                 "Inventory page URL is incorrect."
         );
         logger.info("URL assertion passed: Inventory page loaded correctly");
@@ -49,7 +49,7 @@ public class SauceDemoTest extends BaseTest {
 
         inventoryPage.goToCart();
         CartPage cartPage = new CartPage(driver);
-        Assert.assertTrue(driver.getCurrentUrl().contains("cart.html"));
+        Assert.assertTrue(cartPage.getCurrentUrl().contains("cart.html"));
         logger.info("Navigated to Cart page successfully");
 
         Assert.assertEquals(cartPage.getItemName(), "Sauce Labs Backpack");
@@ -63,7 +63,10 @@ public class SauceDemoTest extends BaseTest {
         inventoryPage.goToCart();
 
         CartPage cartPage = new CartPage(driver);
+        Assert.assertTrue(cartPage.isCheckoutButtonEnabled(), "Checkout button should be enabled!");
+        logger.info("Assertion passed: Checkout button is enabled");
         cartPage.goToCheckOut();
+
 
         CheckoutPage checkoutPage = new CheckoutPage(driver);
         checkoutPage.enterCheckoutInfo(Customer.getStandardCustomer());
@@ -74,7 +77,7 @@ public class SauceDemoTest extends BaseTest {
         CheckoutCompletePage completePage = new CheckoutCompletePage(driver);
 
         Assert.assertTrue(
-                driver.getCurrentUrl().contains("checkout-complete.html"),
+                completePage.getCurrentUrl().contains("checkout-complete.html"),
                 "Order completion page URL is incorrect."
         );
         logger.info("URL assertion passed: Checkout complete page loaded");
@@ -92,7 +95,7 @@ public class SauceDemoTest extends BaseTest {
         );
         logger.info("Assertion passed: Back Home button is visible");
     }
-    //failing test for checking "make a screenshot in case of test failure"
+
     @Test
     public void testFailedScenarioForScreenshot() {
         logger.info("Starting testFailedScenarioForScreenshot execution (intended to fail)");
