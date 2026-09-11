@@ -42,16 +42,16 @@ out/
 target/
 .DS_Store
 # Logs
+# Allure & Test Reports
+.allure/
+allure-results/
+allure-report/
+allure-maven/
+
+# Logs & Screenshots
 logs/
 *.log
-target/
-
-# Test Results & Screenshots
-target/
+*.png
 
 .ai/
 
-target/
-.allure/
-allure-results/
-*.png
