@@ -26,6 +26,7 @@ public class TestListener implements ITestListener {
         WebDriver driver = DriverManager.getDriver();
 
         if (driver != null) {
+            saveScreenshotToAllure(driver);
             String screenshotDir = getScreenshotDir();
             String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
             String screenshotName = result.getName() + "_" + timeStamp + ".png";
