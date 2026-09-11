@@ -8,6 +8,8 @@ import org.testng.annotations.BeforeMethod;
 import utils.ConfigReader;
 import utils.DriverManager;
 
+import java.time.Duration;
+
 public class BaseTest {
     protected WebDriver driver;
     protected final Logger logger = LogManager.getLogger(this.getClass());
@@ -15,6 +17,7 @@ public class BaseTest {
     @BeforeMethod
     public void setup() {
         driver = configureDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get(ConfigReader.getProperty("base.url"));
     }
 
