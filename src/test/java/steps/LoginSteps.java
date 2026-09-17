@@ -12,11 +12,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.time.Duration;
 
 public class LoginSteps {
-    private LoginPage loginPage;
+    private LoginPage loginPage = new LoginPage(DriverManager.getDriver());
 
     @Given("User navigates to login page")
     public void openLoginPage() {
-        loginPage = new LoginPage(DriverManager.getDriver());
         DriverManager.getDriver().get(ConfigReader.getProperty("base.url"));
     }
 
@@ -39,8 +38,8 @@ public class LoginSteps {
             boolean isUrlCorrect = wait.until(ExpectedConditions.urlContains("inventory.html"));
             Assert.assertTrue(isUrlCorrect, "Expected navigation to inventory page was unsuccessful.");
         } else {
-            boolean isUrlNotChanged = wait.until(ExpectedConditions.not(ExpectedConditions.urlContains("inventory.html")));
-            Assert.assertTrue(isUrlNotChanged, "URL should not change upon failed login.");
+            boolean isErrorDisplayed = wait.until(ExpectedConditions.visibilityOf(loginPage.getErrorMessage())).isDisplayed();
+            Assert.assertTrue(isErrorDisplayed, "Error message should be displayed upon failed login.");
         }
     }
 }

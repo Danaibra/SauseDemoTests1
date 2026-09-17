@@ -8,6 +8,7 @@
     <test name="UI tests">
         <classes>
             <class name="tests.SauceDemoTest"/>
+            <class name="runners.CucumberTestRunner"/>
         </classes>
     </test>
 </suite>
