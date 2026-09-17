@@ -7,6 +7,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import io.qameta.allure.Attachment;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,6 +26,7 @@ public class TestListener implements ITestListener {
         WebDriver driver = DriverManager.getDriver();
 
         if (driver != null) {
+            saveScreenshotToAllure(driver);
             String screenshotDir = getScreenshotDir();
             String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
             String screenshotName = result.getName() + "_" + timeStamp + ".png";
@@ -45,6 +47,11 @@ public class TestListener implements ITestListener {
                 logger.error("Failed to save screenshot: {}", e.getMessage(), e);
             }
         }
+    }
+
+    @Attachment(value = "Failure Screenshot", type = "image/png")
+    public byte[] saveScreenshotToAllure(WebDriver driver) {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 
     private String getScreenshotDir() {

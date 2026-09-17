@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,6 +30,10 @@ public class LoginPage extends BasePage {
 
     public void clickLogin() {
         new LoggedElement(loginButton).click("Login Button");
+    }
+
+    public WebElement getErrorMessage() {
+        return driver.findElement(By.cssSelector("[data-test='error']"));
     }
 
     public void login(User user) {
