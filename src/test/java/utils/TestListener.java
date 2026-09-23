@@ -1,5 +1,6 @@
 package utils;
 
+import io.qameta.allure.Allure;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
@@ -9,6 +10,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import io.qameta.allure.Attachment;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -49,9 +51,10 @@ public class TestListener implements ITestListener {
         }
     }
 
-    @Attachment(value = "Failure Screenshot", type = "image/png")
-    public byte[] saveScreenshotToAllure(WebDriver driver) {
-        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+
+    private void saveScreenshotToAllure(WebDriver driver) {
+        byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+        Allure.addAttachment("Failure ScreenShot", new ByteArrayInputStream(screenshot));
     }
 
     private String getScreenshotDir() {
